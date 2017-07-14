@@ -27,8 +27,8 @@ class Routes extends Component {
           <Root />
           <Switch>
             <Route exact path="/" component={AllCampuses} />
-            <Route path="/campuses" component={AllCampuses} />
-            <Route path="/students" component={AllUsers} />
+            <Route exact path="/campuses" component={AllCampuses} />
+            <Route exact path="/students" component={AllUsers} />
             {/* <Route path="/signup" component={Signup} />
             <Route exact path="/users" component={UserList} />
             <Route path="/users/:id" component={UserDetail} />
