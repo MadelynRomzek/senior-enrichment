@@ -9,6 +9,7 @@ import { fetchCampuses } from './campuses'
 import AllCampuses from '../../components/AllCampuses';
 import AllUsers from '../../components/AllUsers';
 import SingleCampusContainer from '../../components/SingleCampus';
+import SingleUserContainer from '../../components/SingleUser';
 
 /* -----------------    COMPONENT     ------------------ */
 
@@ -30,13 +31,9 @@ class Routes extends Component {
             <Route exact path="/" component={AllCampuses} />
             <Route exact path="/campuses" component={AllCampuses} />
             <Route exact path="/students" component={AllUsers} />
-            <Route path="/campuses/:campusId" component={SingleCampusContainer} />
-            {/* <Route path="/signup" component={Signup} />
-            <Route exact path="/users" component={UserList} />
-            <Route path="/users/:id" component={UserDetail} />
-            <Route exact path="/stories" component={StoryList} />
-            <Route path="/stories/:id" component={StoryDetail} />
-            <Route component={Home} /> */}
+            <Route exact path="/students/:studentId" component={SingleUserContainer} />
+            <Route exact path="/campuses/:campusId" component={SingleCampusContainer} />
+            <Route exact path="/campuses/:campusId/students" component={AllUsers} />
           </Switch>
           </div>
       </Router>

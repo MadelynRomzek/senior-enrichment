@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { NavLink } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 
 function AllUsers({users}) {
@@ -11,11 +11,11 @@ function AllUsers({users}) {
 				<div className="row">
 					{users.map(user =>
 						<div className="col-lg-6" key={user.id}>
-              <NavLink to={`/campuses/${user.id}`}>
+              <Link to={`/students/${user.id}`}>
 							<li className="usersListElt">
 								{user.name}
 							</li>
-            </NavLink>
+            </Link>
 						</div>
 					)}
 				</div>

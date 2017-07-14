@@ -27,4 +27,10 @@ api.get('/campuses/:campusId', (req, res, next) => {
 	.catch(next);
 });
 
+api.get('/campuses/:id/students', (req, res, next) => {
+	User.findAll({where: {campusId: req.params.id}})
+	.then(students => res.json(students))
+	.catch(next);
+});
+
 module.exports = api;
