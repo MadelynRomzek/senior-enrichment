@@ -8,4 +8,6 @@
 const User = require('./user');
 const Campus = require('./campus');
 
+User.belongsTo(Campus);
+
 module.exports = {User, Campus};

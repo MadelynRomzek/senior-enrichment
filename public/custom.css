@@ -23,8 +23,13 @@ body {
   height: 250px;
 }
 
-.navbar {
-  /* padding: 0 40px; */
+.profile-img {
+  width: 80%;
+  height: 80;
+}
+
+/* .navbar {
+  padding: 0 40px; */
   background-color: #ddd; }
   .navbar a {
     color: white;
@@ -46,7 +51,7 @@ body {
 .navbar-fixed-top {
   position: fixed;
   top: 0;
-  width: 100%; }
+  width: 100%; } */
 
 .text-center {
   text-align: center; }
@@ -57,7 +62,7 @@ body {
 body {
   background-image: url("/images/background.png");
   background-size: 100% auto;
-  background-repeat: no-repeat;
+  /* background-repeat: no-repeat; */
   padding-top: 35px;
   color: white; }
   body h1 {
@@ -70,6 +75,11 @@ body {
 
 li {
   list-style-type: none
+}
+
+.nav-link {
+  size: 50px;
+  display: inline;
 }
 
 .campusListElt {
