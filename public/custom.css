@@ -1,0 +1,95 @@
+html, body {
+  height: 100%;
+}
+
+body {
+  padding-top: 50px;
+}
+
+/* Page Sections */
+.section,
+.section-colored {
+  padding: 50px 0; }
+
+/* 404 Page Styles */
+.error-404 {
+  font-size: 8em; }
+
+* {
+  box-sizing: border-box; }
+
+.media-object {
+  width: 80%;
+  height: 250px;
+}
+
+.navbar {
+  /* padding: 0 40px; */
+  background-color: #ddd; }
+  .navbar a {
+    color: white;
+    text-decoration: none; }
+    .navbar a:hover {
+      text-decoration: underline; }
+  .navbar ul {
+    list-style-type: none; }
+
+.navbar-inverse {
+  background-color: #222222; }
+  .navbar-inverse a {
+    color: #bbbbbb; }
+
+.navbar-brand {
+  float: left;
+  margin-top: 13px; }
+
+.navbar-fixed-top {
+  position: fixed;
+  top: 0;
+  width: 100%; }
+
+.text-center {
+  text-align: center; }
+
+.section-colored {
+  background-color: #943E52; }
+
+body {
+  background-image: url("/images/background.png");
+  background-size: 100% auto;
+  background-repeat: no-repeat;
+  padding-top: 35px;
+  color: white; }
+  body h1 {
+    color: black; }
+    body h1 small {
+      font-weight: 400;
+      font-size: 65%;
+      color: #777; }
+
+
+li {
+  list-style-type: none
+}
+
+.campusListElt {
+  font-size: 25px;
+  padding-bottom: 30px;
+}
+
+.usersListElt {
+  font-size: 25px;
+  padding-bottom: 20px;
+  text-align: center;
+}
+
+h3 {
+  color: white;
+  padding-bottom: 20px;
+}
+
+.row {
+  clear: both;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between; }

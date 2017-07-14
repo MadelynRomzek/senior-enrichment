@@ -48,19 +48,33 @@ const users = [
 const campuses = [
 
   {
-    name: 'Venus'
+    name: 'Venus',
+    image: '/images/venus.jpg'
   },
 
   {
-    name: 'Saturn'
+    name: 'Saturn',
+    image: '/images/saturn.jpg'
   },
 
   {
-    name: 'Mars'
+    name: 'Mars',
+    image: '/images/mars.jpg'
   },
 
   {
-    name: 'Neptune'
+    name: 'Neptune',
+    image: '/images/neptune.jpg'
+  },
+
+  {
+    name: 'Mercury',
+    image: '/images/mercury.jpg'
+  },
+
+  {
+    name: 'Jupiter',
+    image: '/images/jupiter.jpg'
   }
 ];
 

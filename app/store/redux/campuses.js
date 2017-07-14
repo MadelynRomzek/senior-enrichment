@@ -30,6 +30,6 @@ const campusesReducer = function(state = [], action) {
     default:
       return state;
   }
-}
+};
 
 export default campusesReducer;
