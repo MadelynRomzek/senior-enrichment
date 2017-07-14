@@ -3,15 +3,13 @@ var Sequelize = require('sequelize')
 var db = require('../index.js')
 
 
-module.exports = db.define('user', {
+module.exports = db.define('campus', {
   name: {
     type: Sequelize.STRING,
     allowNull: false
   },
-  email: {
+  image: {
     type: Sequelize.STRING,
-    allowNull: false,
-    unique: true,
-    isEmail: true
+    defaultValue: '/images/default-photo.jpg'
   }
 });
