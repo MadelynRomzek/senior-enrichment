@@ -10,6 +10,7 @@ import AllCampuses from '../../components/AllCampuses';
 import AllUsers from '../../components/AllUsers';
 import SingleCampusContainer from '../../components/SingleCampus';
 import SingleUserContainer from '../../components/SingleUser';
+import Home from '../../components/Home'
 
 /* -----------------    COMPONENT     ------------------ */
 
@@ -24,11 +25,10 @@ class Routes extends Component {
   render () {
     return (
       <Router history={history}>
-
         <div>
           <Root />
           <Switch>
-            <Route exact path="/" component={AllCampuses} />
+            <Route exact path="/" component={Home} />
             <Route exact path="/campuses" component={AllCampuses} />
             <Route exact path="/students" component={AllUsers} />
             <Route exact path="/students/:studentId" component={SingleUserContainer} />

@@ -13,5 +13,13 @@ module.exports = db.define('user', {
     allowNull: false,
     unique: true,
     isEmail: true
+  },
+  image: {
+    type: Sequelize.STRING,
+    defaultValue: '/images/profile-img.png'
+  },
+  gradYear: {
+    type: Sequelize.INTEGER,
+    allowNull: false
   }
 });

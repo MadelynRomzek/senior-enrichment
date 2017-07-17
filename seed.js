@@ -6,46 +6,58 @@ const users = [
 
   {
     name: 'Cody',
-    email: 'cody@cody.cody'
+    email: 'cody@cody.cody',
+    gradYear: 2022
   },
 
   {
     name: 'Jess',
-    email: 'Jess@Jess.Jess'
+    email: 'Jess@Jess.Jess',
+    gradYear: 2018
   },
 
   {
     name: 'Karen',
-    email: 'Karen@Karen.Karen'
+    email: 'Karen@Karen.Karen',
+    gradYear: 2019
   },
 
   {
     name: 'Warren',
-    email: 'Warren@Warren.Warren'
+    email: 'Warren@Warren.Warren',
+    gradYear: 2018
   },
 
   {
     name: 'Helen',
-    email: 'Helen@Helen.Helen'
+    email: 'Helen@Helen.Helen',
+    gradYear: 2022
   },
 
   {
     name: 'Jake',
-    email: 'Jake@Jake.Jake'
+    email: 'Jake@Jake.Jake',
+    gradYear: 2018
   },
 
   {
     name: 'Issac',
-    email: 'Issac@Issac.Issac'
+    email: 'Issac@Issac.Issac',
+    gradYear: 2023
   },
 
   {
     name: 'Priti',
-    email: 'Priti@Priti.Priti'
+    email: 'Priti@Priti.Priti',
+    gradYear: 2018
   }
 ];
 
 const campuses = [
+  {
+    name: 'Mercury',
+    image: '/images/mercury.jpg'
+  },
 
   {
     name: 'Venus',
@@ -53,8 +65,8 @@ const campuses = [
   },
 
   {
-    name: 'Saturn',
-    image: '/images/saturn.jpg'
+    name: 'Earth',
+    image: 'images/earth.jpg'
   },
 
   {
@@ -63,18 +75,23 @@ const campuses = [
   },
 
   {
+    name: 'Jupiter',
+    image: '/images/jupiter.jpg'
+  },
+
+  {
+    name: 'Saturn',
+    image: '/images/saturn.jpg'
+  },
+
+  {
     name: 'Neptune',
     image: '/images/neptune.jpg'
   },
 
   {
-    name: 'Mercury',
-    image: '/images/mercury.jpg'
-  },
-
-  {
-    name: 'Jupiter',
-    image: '/images/jupiter.jpg'
+    name: "Pluto",
+    image: '/images/pluto.jpg'
   }
 ];
 
