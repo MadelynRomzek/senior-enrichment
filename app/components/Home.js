@@ -1,6 +1,14 @@
 import React from 'react';
 import AllCampuses from './AllCampuses';
 
+/*
+	CONNIE: again about the inline styling. Several of these, as I'm noticing, are
+	repeatedly defined in each component file. Why not just create a .style100 class
+	in some css file and plug it in?
+
+	Overall though, I will say your website looks quite good.
+*/
+
 var style100 = {
 	width: '100%'
 };

@@ -13,6 +13,12 @@ module.exports = db.define('user', {
     allowNull: false,
     unique: true,
     isEmail: true
+    // ^CONNIE: this isEmail constraint will not kick off - it is a sequelize-level
+    // validation rather than a DB level validation, so you must put it in another
+    // 'validate' object as such -
+    // validate: {
+    //   isEmail: true,
+    // },
   },
   image: {
     type: Sequelize.STRING,

@@ -3,11 +3,25 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { fetchUser } from '../store/redux/singleUser';
 
+/*
+
+CONNIE: once again about the reusablility between SingleUser and SingleCampus
+They are almost identical! Unless there was some UI that really differentiated
+how the user view from the campus view, it seems much better to simply reuse the
+same component with different props. That being said, I do think there might be
+some campus-specific logic that should be different from students, which makes
+this separation very sensible. However, that difference in functionality does
+not appear to be implemented or reflected anywhere in the view currently.
+
+*/
+
+
 var textCenter = {
 	textAlign: 'center'
 };
 
 class SingleUser extends Component {
+	// CONNNIE: a stateless component should be a pure function
 	constructor(props) {
 		super(props);
 	}

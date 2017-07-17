@@ -1,4 +1,4 @@
-'use strict';
+s'use strict';
 const api = require('express').Router();
 const db = require('../db');
 const { User, Campus } = require('../db/models');
@@ -17,6 +17,7 @@ api.get('/users', (req, res, next) => {
 api.get('/users/:userId', (req, res, next) => {
 	User.findOne({where: {userId: req.params.userId}})
 	.then(user => res.json(user))
+	// ^CONNIE: what if no user is found?
 	.catch(next);
 });
 
@@ -38,6 +39,7 @@ api.get('/campuses/:campusId', (req, res, next) => {
 	console.log("axios.get by campus id");
 	Campus.findOne({where: {id: req.params.campusId}})
 	.then(campus => res.json(campus))
+	// CONNIE: once again, what if campus is not found?
 	.catch(next);
 });
 
@@ -54,5 +56,12 @@ api.post('/campuses', (req, res, next) => {
   })
   .catch(next);
 });
+
+/*
+
+CONNIE: I would recommend modularizing user and campus logic. 
+Especially if you have intentions of adding more routes (put, delete)
+
+*/
 
 module.exports = api;

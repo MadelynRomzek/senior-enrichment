@@ -10,9 +10,13 @@ export function getCampus (selectedCampus) {
   return action;
 }
 
+
+// CONNIE: this seems to be something that doesn't belong in this reducer
+// it seems to be handled by campuses reducer already
 export function postCampus (newCampus) {
   const action = {
-    type: GET_CAMPUS
+    type: GET_CAMPUS // this seems wrong?
+    // what about the payload newCampus?
   };
   return action;
 }

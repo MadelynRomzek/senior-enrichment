@@ -3,6 +3,11 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { makeCampus } from "../store/redux/campuses";
 
+// CONNIE: I generally discourage inline styling. There seems to be an increase
+// in using inline styles with React apps, but I still feel there's no place
+// for styling in our HTML (granted, this is jsx, but similar enough). If you
+// are keen on styling, and intend to do anything even mildly complex, you should
+// be defining these reusable styles in a stylesheet
 var style100 = {
 	width: '100%'
 };
@@ -68,6 +73,11 @@ class AllCampuses extends Component {
 		);
 	}
 
+	// CONNIE: I think this is a general pattern we've introduced in workshops, as
+	// in, using 'xHandler' or 'handleX' for events. However, I personally feel
+	// that this naming convention is rather pointless - why not be more descriptive
+	// about what is happening? Why not something along the lines of 'createCampus'
+	// or 'submitNewCampus'?
 	submitHandler (e) {
 		e.preventDefault();
 		const newCampus = {

@@ -3,6 +3,16 @@ import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { makeUser } from '../store/redux/users';
 
+/*
+
+	CONNIE: This AllUsers view is almost identical to the AllCampuses view. In fact,
+	I am willing to bet that you had copy-pasted from one of these to the other and
+	made very slight edits accordingly. Perhaos you could have made it into a more
+	generic and reusable component? This then would be a good case to use a generic naming
+	scheme for your event handling functions (see comment in AllCampuses).
+
+*/
+
 var style100 = {
 	width: '100%'
 };

@@ -14,6 +14,8 @@ import Home from '../../components/Home'
 
 /* -----------------    COMPONENT     ------------------ */
 
+// CONNIE: this file should not be here?
+
 class Routes extends Component {
 
    componentDidMount () {
