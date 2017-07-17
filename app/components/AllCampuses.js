@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { makeCampus } from "../store/redux/campuses";
 
 var style100 = {
 	width: '100%'
@@ -13,9 +14,11 @@ var textCenter = {
 class AllCampuses extends Component {
 	constructor(props) {
 		super(props);
+		this.submitHandler = this.submitHandler.bind(this);
 	}
 
 	render() {
+		console.log(this.props)
 		const { campuses } = this.props;
 		return (
 			<div>
@@ -28,6 +31,8 @@ class AllCampuses extends Component {
 					</h3>
 				</div>
 
+					{campuses.length
+					?
 				<div className="w3-row-padding">
 					{campuses.map(campus =>
 						<div className="w3-col l3 m6 w3-margin-bottom">
@@ -42,21 +47,37 @@ class AllCampuses extends Component {
 						</div>
 					)}
 				</div>
+			: <h3>Nothing Here</h3> }
+
+				<div className="w3-container w3-padding-32">
+					<h3 className="w3-border-bottom w3-border-light-grey w3-padding-16">Add a new campus</h3>
+					<form onSubmit={this.submitHandler}>
+						<input className="w3-input" type="text" placeholder="Name" required name="name" />
+						<input
+							className="w3-input w3-section"
+							type="text"
+							placeholder="Description"
+							required
+							name="description" />
+						<button className="w3-button w3-black w3-section" type="submit">
+							<i className="fa fa-paper-plane" /> Submit
+						</button>
+					</form>
+				</div>
 			</div>
 		);
 	}
+
+	submitHandler (e) {
+		e.preventDefault();
+		const newCampus = {
+      name: e.target.name.value,
+      description: e.target.description.value
+    };
+		this.props.makeCampus(newCampus)
+  }
 }
 
-// <div className="col-lg-6" key={campus.id}>
-// 	<Link to={`/campuses/${campus.id}`}>
-// 		<li className="campusListElt">
-// 			{campus.name}
-// 			<a href="#">
-// 				<img className="media-object" src={campus.image} alt="image" />
-// 			</a>
-// 		</li>
-// 	</Link>
-// </div>
 const mapStateToProps = function(state) {
 	return {
 		campuses: state.campuses,
@@ -64,13 +85,7 @@ const mapStateToProps = function(state) {
 	};
 };
 
-const mapDispatch = dispatch => ({
-	// fetchSelectedCampus: () => {
-	// 	dispatch(fetchCampus());
-	// }
-});
+const mapDispatchToProps = { makeCampus };
 
-const connectedAllCampuses = connect(mapStateToProps, mapDispatch)(AllCampuses);
+const connectedAllCampuses = connect(mapStateToProps, mapDispatchToProps)(AllCampuses);
 export default connectedAllCampuses;
-
-// export default connect(mapStateToProps, mapDispatch)(SingleCampus);

@@ -14,6 +14,20 @@ api.get('/users', (req, res, next) => {
 	.catch(next);
 });
 
+api.get('/users/:userId', (req, res, next) => {
+	User.findOne({where: {userId: req.params.userId}})
+	.then(user => res.json(user))
+	.catch(next);
+});
+
+api.post('/users', (req, res, next) => {
+	User.create(req.body)
+  .then(function (user) {
+    res.status(201).json(user);
+  })
+  .catch(next);
+});
+
 api.get('/campuses', (req, res, next) => {
 	Campus.findAll()
 	.then(campuses => res.json(campuses))
@@ -31,6 +45,14 @@ api.get('/campuses/:id/students', (req, res, next) => {
 	User.findAll({where: {campusId: req.params.id}})
 	.then(students => res.json(students))
 	.catch(next);
+});
+
+api.post('/campuses', (req, res, next) => {
+	Campus.create(req.body)
+  .then(function (campus) {
+    res.status(201).json(campus);
+  })
+  .catch(next);
 });
 
 module.exports = api;

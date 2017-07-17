@@ -1,31 +1,51 @@
 import React, { Component } from 'react';
 import { Link } from 'react-router-dom';
 import { connect } from 'react-redux';
+import { fetchUser } from '../store/redux/singleUser';
 
-class SingleUserContainer extends Component {
+var textCenter = {
+	textAlign: 'center'
+};
+
+class SingleUser extends Component {
 	constructor(props) {
-    super(props);
-  }
+		super(props);
+	}
 
 	render() {
-    console.log("props", this.props)
+		console.log('props', this.props);
 		return (
 			<div>
-				<div className="section lead" />
-				<div className="container">
-					<div className="row">
-            {
-              this.props.currentUser
-              ?
-              <div>
-						    <h3>{this.props.currentUser.name}'s Profile</h3>
-                    <Link to="/students" className="btn-lg">Click to see Students of {this.props.currentUser.name}</Link>
+				<div>
+					<div className="w3-container w3-padding-32" id="about">
+						{this.props.currentUser
+							? <div className="w3-content">
+									<h3
+										className="w3-border-bottom w3-border-light-grey w3-padding-16"
+										style={textCenter}
+									>
+										<b>
+											{this.props.currentUser.name}
+										</b>
+									</h3>
+									<div className="w3-col l6 m6 w3-margin-bottom">
+										<img src={this.props.currentUser.image} width="400" height="400" />
+									</div>
 
-                    <p>{this.props.currentCampus.email}</p>
-              </div>
-              :
-              <h3>Nothing Here</h3>
-            }
+									<div className="w3-col l6 m6 w3-margin-bottom" />
+
+									<div className="w3-col l6 m6 w3-margin-bottom">
+										<p>
+											<b>Email: </b>
+											{this.props.currentUser.email}
+										</p>
+										<p>
+											<b>Graduation year: </b>
+											{this.props.currentUser.gradYear}
+										</p>
+									</div>
+								</div>
+							: <h3>Nothing Here</h3>}
 					</div>
 				</div>
 			</div>
@@ -33,15 +53,20 @@ class SingleUserContainer extends Component {
 	}
 }
 
-
 const mapStateToProps = function(state, ownProps) {
 	return {
-    selectedUser: +ownProps.match.params.studentId,
-    users: state.users,
-    currentUser: state.users.find((user) => +user.id === +ownProps.match.params.studentId)
+		selectedUser: +ownProps.match.params.studentId,
+		users: state.users,
+		currentUser: state.users.find(user => +user.id === +ownProps.match.params.studentId)
 	};
 };
 
-const singleUserConnector = connect(mapStateToProps);
-const singleUserContainer = singleUserConnector(SingleUserContainer);
+const mapDispatchToProps = dispatch => ({
+	fetchUser: () => {
+		dispatch(fetchUser());
+	}
+});
+
+const singleUserConnector = connect(mapStateToProps, mapDispatchToProps);
+const SingleUserContainer = singleUserConnector(SingleUser);
 export default SingleUserContainer;
